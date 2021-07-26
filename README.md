@@ -17,4 +17,4 @@ package/ folder not uploaded due to it's size. The "install packages offline" sh
 
 Full version (containing the package folder):
 
-https://drive.google.com/drive/folders/1ra4e78Ye7n1-M04LjD9_YN_Ls31FvAyL?usp=sharing
+https://drive.google.com/drive/folders/1K4KoJ2-R-bvqvad3OtmltPKBH7BCMLW0?usp=sharing
