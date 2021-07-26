@@ -5,5 +5,3 @@ apk add b43-fwcutter
 modprobe b43
 
 echo 43 >> /etc/modules
-
-reboot
