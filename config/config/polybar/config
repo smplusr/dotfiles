@@ -1,0 +1,368 @@
+;--------------------------------------------
+; colors                                    ;
+;--------------------------------------------
+
+[colors]
+
+;----- bspwm -----;
+
+	background-alt = #4e5460
+	foreground-alt = #212830
+	primary = #ffb52a
+	secondary = #e60053
+	alert = #bd2c40
+
+;----- general -----;
+
+	background			= #2e3440
+	foreground			= #111820
+	
+	black	= #111820
+	
+	red	= #bf616a
+	green	= #a3be8c
+	yellow	= #ebcb8b
+	orange	= #d08770
+	pink	= #b48ead
+	purple	= #946ead
+	blue	= #5e81ac
+	cyan	= #88C0D0
+
+;--------------------------------------------
+; bars                                      ;
+;--------------------------------------------
+
+[bar/main]
+	;monitor = ${env:MONITOR:HDMI-1}
+	width = 100%
+	height = 20
+	;offset-x = 1%
+	;offset-y = 1%
+	radius = 0.0
+	fixed-center = false
+
+	background = ${colors.background}
+	foreground = ${colors.foreground}
+
+	line-size = 3
+	line-color = #f00
+
+	border-size = 0
+	border-color = #00000000
+
+	padding-left = 0
+	padding-right = 2
+
+	module-margin-left = 0
+	module-margin-right = 0
+
+	font-0 = tewi:pixelsize=10;1
+	font-1 = FontAwesome:size=12;2
+	font-2 = Iosevka Nerd Font:size=15;4
+
+	modules-left = bspwm arrow-win-tail
+	modules-right = arrow-red filesystem arrow-orange memory arrow-yellow cpu arrow-green battery arrow-cyan wlan eth arrow-blue temperature arrow-pink date arrow-tail
+
+	tray-position = right
+	tray-padding = 2
+	;tray-transparent = true
+	;tray-background = #0063ff
+
+	;wm-restack = bspwm
+
+	override-redirect = true
+	enable-ipc = true
+
+	;scroll-up = bspwm-desknext
+	;scroll-down = bspwm-deskprev
+
+	cursor-click = pointer
+	cursor-scroll = ns-resize
+
+;-------------------------------------------
+; arrows                                   ;
+;-------------------------------------------
+
+[module/arrow-red]
+	type = custom/text
+	content = "%{T3} %{T-}"
+	content-foreground = ${colors.red}
+	content-background = ${colors.background}
+
+[module/arrow-orange]
+	type = custom/text
+	content = "%{T3} %{T-}"
+	content-foreground = ${colors.orange}
+	content-background = ${colors.red}
+
+[module/arrow-yellow]
+	type = custom/text
+	content = "%{T3} %{T-}"
+	content-foreground = ${colors.yellow}
+	content-background = ${colors.orange}
+
+[module/arrow-green]
+	type = custom/text
+	content = "%{T3} %{T-}"
+	content-foreground = ${colors.green}
+	content-background = ${colors.yellow}
+	
+	[module/arrow-cyan]
+	type = custom/text
+	content = "%{T3} %{T-}"
+	content-foreground = ${colors.cyan}
+	content-background = ${colors.green}
+
+[module/arrow-blue]
+	type = custom/text
+	content = "%{T3} %{T-}"
+	content-foreground = ${colors.blue}
+	content-background = ${colors.cyan}
+
+[module/arrow-pink]
+	type = custom/text
+	content = "%{T3} %{T-}"
+	content-foreground = ${colors.pink}
+	content-background = ${colors.blue}
+	
+[module/arrow-tail]
+	type = custom/text
+	content = "%{T3} %{T-}"
+	content-foreground = ${colors.background}
+	content-background = ${colors.pink}
+	
+[module/arrow-win-tail]
+	type = custom/text
+	content = "%{T3} %{T-}"
+	content-foreground = ${colors.background}
+	content-background = ${colors.background-alt}
+
+;--------------------------------------------
+; modules                                   ;
+;--------------------------------------------
+
+[module/bspwm]
+;	type = internal/bspwm
+;
+;	label-focused = %index%
+;	label-focused-background = ${colors.background-alt}
+;	label-focused-underline= ${colors.primary}
+;	label-focused-padding = 2
+;
+;	label-occupied = %index%
+;	label-occupied-padding = 2
+;
+;	label-urgent = %index%!
+;	label-urgent-background = ${colors.alert}
+;	label-urgent-padding = 2
+;
+;	label-empty = %index%
+;	label-empty-foreground = ${colors.foreground-alt}
+;	label-empty-padding = 2
+
+type = internal/bspwm
+; Only show workspaces defined on the same output as the bar
+pin-workspaces = true
+
+; Create click handler used to focus workspace
+; Default: true
+enable-click = true
+
+; Create scroll handlers used to cycle workspaces
+; Default: true
+enable-scroll = true
+
+; Set the scroll cycle direction
+; Default: true
+reverse-scroll = false
+
+;   ● ○
+;label-focused = %name%
+;label-focused = %index%
+label-focused = "%{T0}%{T-}"
+label-focused-foreground = ${colors.foreground}
+label-focused-background = ${colors.background-alt}
+label-focused-padding = 2
+label-focused-font = 3
+label-occupied = "%{T1}%{T-}"
+label-occupied-foreground = ${colors.foreground}
+label-occupied-background = ${colors.background-alt}
+label-occupied-padding = 2
+label-occupied-font = 3
+label-urgent = "%{T1}%{T-}"
+label-urgent-foreground = ${colors.foreground}
+label-urgent-background = ${colors.background-alt}
+label-urgent-padding = 2
+label-urgent-font = 3
+label-empty = "%{T1}%{T-}"
+label-empty-foreground = ${colors.foreground}
+label-empty-background = ${colors.background-alt}
+label-empty-padding = 2
+label-empty-font = 3
+
+[module/filesystem]
+	type = internal/fs
+	interval = 25
+
+	mount-0 = /
+
+	label-mounted = %{F-} %{F-} %percentage_used%%
+	label-unmounted = %mountpoint% not mounted
+	label-unmounted-foreground = ${colors.foreground}
+	
+	format-mounted-background = ${colors.red}
+	format-unmounted-background = ${colors.red}
+
+[module/memory]
+	type = internal/memory
+	interval = 2
+	format-prefix = "  "
+	format-prefix-foreground = ${colors.black}
+	label = %percentage_used%%
+	
+	format-foreground = ${colors.black}
+	format-background = ${colors.orange}
+	
+[module/cpu]
+	type = internal/cpu
+	interval = 2
+	format-prefix = " "
+	format-prefix-foreground = ${colors.black}
+	label = " %percentage%%"
+	
+	format-foreground = ${colors.black}
+	format-background = ${colors.yellow}
+	
+[module/battery]
+	type = internal/battery
+	battery = BAT0
+	adapter = AC
+	full-at = 98
+
+	format-charging = <animation-charging> <label-charging>
+	
+	format-charging-background = ${colors.green}
+
+	format-discharging = <ramp-capacity> <label-discharging>
+	
+	format-discharging-background = ${colors.green}
+
+	format-full-prefix = "  "
+	format-full-prefix-foreground = ${colors.black}
+	
+	format-full-background = ${colors.green}
+
+	ramp-capacity-0 = " "
+	ramp-capacity-1 = " "
+	ramp-capacity-2 = " "
+	ramp-capacity-foreground = ${colors.black}
+
+	animation-charging-0 = " "
+	animation-charging-1 = " "
+	animation-charging-2 = " "
+	animation-charging-foreground = ${colors.black}
+	animation-charging-framerate = 750
+	
+	format-background = ${colors.green}
+	
+[module/wlan]
+	type = internal/network
+	interface = wlan0
+	interval = 1.0
+	accumulate-stats = true
+	unknown-as-up = true
+
+	format-connected = <label-connected>
+	format-disconnected = <label-disconnected>
+
+	format-connected-prefix = " "
+	format-disconnected-prefix = " "
+
+	format-connected-background = ${colors.cyan}
+	format-disconnected-background = ${colors.cyan}
+	format-disconnected-foreground = ${colors.black}
+
+	format-connected-padding = 0
+	format-disconnected-padding = 0
+
+	label-connected = " %essid%"
+	label-disconnected = " n/a"
+	
+	format-background = ${colors.cyan}
+	
+[module/eth]
+	type = internal/network
+	interface = eth0
+	interval = 1.0
+	accumulate-stats = true
+	unknown-as-up = true
+
+	format-connected = <label-connected>
+	format-disconnected = <label-disconnected>
+
+	format-connected-prefix = " "
+	format-disconnected-prefix = " "
+
+	format-connected-background = ${colors.cyan}
+	format-disconnected-background = ${colors.cyan}
+	format-disconnected-foreground = ${colors.black}
+
+	format-connected-padding = 0
+	format-disconnected-padding = 0
+
+	label-connected = " %essid%"
+	label-disconnected = " n/a"
+	
+	format-background = ${colors.cyan}
+	
+[module/temperature]
+	type = internal/temperature
+	thermal-zone = 0
+	warn-temperature = 60
+
+	format = <ramp> <label>
+	format-warn = <ramp> <label-warn>
+
+	label = %temperature-c%
+	label-warn = %temperature-c%
+	label-warn-foreground = ${colors.black}
+
+	ramp-0 = " "
+	ramp-1 = " "
+	ramp-2 = " "
+	ramp-foreground = ${colors.black}
+	
+	format-background = ${colors.blue}
+
+[module/date]
+	type = internal/date
+	interval = 5
+
+	date =
+	date-alt = " %Y-%m-%d"
+
+	time = %H:%M
+	time-alt = %H:%M:%S
+
+	format-prefix = " "
+	format-prefix-foreground = ${colors.black}
+	label = %date% %time%
+	
+	format-background = ${colors.pink}
+
+;--------------------------------------------
+; Settings                                   ;
+;--------------------------------------------
+
+[settings]
+	screenchange-reload = true
+	;compositing-background = xor
+	;compositing-background = screen
+	;compositing-foreground = source
+	;compositing-border = over
+	
+[global/wm]
+	margin-top = 5
+	margin-bottom = 5
+
+	; vim:ft=dosini

@@ -1,0 +1,5 @@
+picom -b
+
+polybar main&
+sxhkd &
+exec bspwm
