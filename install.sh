@@ -4,7 +4,6 @@ chmod +x utilities/config_setup.sh
 
 echo ""
 echo "[INFO] - Required Alpine linux image -> alpine-extended-3.14.0-x86"
-cd /root/dotfiles/
 
 if id user >/dev/null 2>&1
 then
@@ -29,7 +28,6 @@ else
 	echo ""
 	if [[ $REPLY =~ ^[Yy]$ ]]
 	then
-		cd /root/dotfiles/
 		mv misc/repositories /etc/apk
 	fi
 
@@ -49,7 +47,7 @@ else
 	echo ""
 	if [[ $REPLY =~ ^[Yy]$ ]]
 	then	
-		cd /root/dotfiles/utilities
+		cd utilities
 		./package_setup.sh
 	fi
 
@@ -60,7 +58,7 @@ else
 	echo ""
 	if [[ $REPLY =~ ^[Yy]$ ]]
 	then
-		cd /root/dotfiles/utilities
+		cd utilities
 		./broadcom_setup.sh
 	fi
 
@@ -71,8 +69,6 @@ else
 	echo ""
 	if [[ $REPLY =~ ^[Yy]$ ]]
 	then
-		cd /root/dotfiles
-		
 		adduser user
 		
 		setup-xorg-base
@@ -97,7 +93,7 @@ else
 	echo ""
 	if [[ $REPLY =~ ^[Yy]$ ]]
 	then	
-		cd /root/dotfiles/utilities
+		cd utilities
 		./config_setup.sh
 	fi
 fi
