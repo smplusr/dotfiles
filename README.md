@@ -14,6 +14,7 @@ WARNING:
 
 package/ folder not uploaded due to it's size. The "install packages offline" shall not be used.
 
+Vim plugin may not work at first, it is recommended to run :PlugInstall or :PlugUpdate once vim is launched for the first time.
 
 Full version (containing the package folder):
 
