@@ -1,6 +1,15 @@
 cd ../config
 
 echo ""
+echo "[INFO] - Using picom ?"
+read -p "[INFO] - Answer: Y - N | " -n 1 -r
+echo ""
+if [[ $REPLY =~ ^[Yy]$ ]]
+then	
+	sed -i '1ipicom -b' xinitrc
+fi
+
+echo ""
 echo "[INFO] - Use Random wallpapers ?"
 read -p "[INFO] - Answer: Y - N | " -n 1 -r
 echo ""
@@ -58,7 +67,7 @@ else
 						then
 							sed -i '1ifeh --bg-fill .config/wallpapers/wallpaper-6.jpg' xinitrc
 						else
-								echo ""
+							echo ""
 							echo "[INFO] - Using wallpaper 7 ?"
 							read -p "[INFO] - Answer: Y - N | " -n 1 -r
 							echo ""
@@ -76,7 +85,14 @@ fi
 
 mv config /home/user/.config
 
-mv vim /home/user/.vim
+echo ""
+echo "[INFO] - Using vim config ?"
+read -p "[INFO] - Answer: Y - N | " -n 1 -r
+echo ""
+if [[ $REPLY =~ ^[Yy]$ ]]
+then	
+	mv vim /home/user/.vim
+fi
 
 mv profile /home/user/.profile
 mv xinitrc /home/user/.xinitrc
