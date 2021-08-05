@@ -58,24 +58,6 @@ else
 					if [[ $REPLY =~ ^[Yy]$ ]]
 					then	
 						sed -i '1ifeh --bg-fill .config/wallpapers/wallpaper-5.jpg' xinitrc
-					else
-						echo ""
-						echo "[INFO] - Using wallpaper 6 ?"
-						read -p "[INFO] - Answer: Y - N | " -n 1 -r
-						echo ""
-						if [[ $REPLY =~ ^[Yy]$ ]]
-						then
-							sed -i '1ifeh --bg-fill .config/wallpapers/wallpaper-6.jpg' xinitrc
-						else
-							echo ""
-							echo "[INFO] - Using wallpaper 7 ?"
-							read -p "[INFO] - Answer: Y - N | " -n 1 -r
-							echo ""
-							if [[ $REPLY =~ ^[Yy]$ ]]
-							then	
-								sed -i '1ifeh --bg-fill .config/wallpapers/wallpaper-7.jpg' xinitrc
-							fi
-						fi
 					fi
 				fi
 			fi
