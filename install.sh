@@ -73,8 +73,6 @@ else
 		
 		setup-xorg-base
 		
-		mv misc/40-libinput.conf /usr/share/X11/xorg.conf.d/
-		
 		addgroup user audio 
 		addgroup user video 
 		addgroup user input 
@@ -83,6 +81,8 @@ else
 		rc-update add alsa 
 		rc-service bluetooth start 
 		rc-update add bluetooth
+
+		mv misc/40-libinput.conf /usr/share/X11/xorg.conf.d/
 
 		echo snd-pcm-oss >> /etc/modules
 	fi
