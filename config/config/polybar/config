@@ -325,7 +325,7 @@ label-empty-font = 3
 
 	label = %temperature-c%
 	label-warn = %temperature-c%
-	label-warn-foreground = ${colors.black}
+	label-warn-foreground = ${colors.blue}
 
 	ramp-0 = " "
 	ramp-1 = " "
