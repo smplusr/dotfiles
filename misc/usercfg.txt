@@ -1,4 +1,4 @@
-temp_limit=45
+temp_limit=65
 
 arm_freq=1150
 gpu_freq=750
