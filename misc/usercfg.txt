@@ -1,0 +1,34 @@
+temp_limit=45
+
+arm_freq=1150
+gpu_freq=750
+core_freq=600
+over_voltage=8
+
+sdram_freq=550
+#sdram_schmoo=0x02000020
+sdram_over_voltage=4
+
+force_turbo=1
+boot_delay=1
+
+#################################
+
+# Example of safe config for pi 0
+
+#arm_freq=1000
+#gpu_freq=500
+#core_freq=500
+#sdram_freq=500
+#sdram_schmoo=0x02000020
+#over_voltage=6 (default)
+#over_voltage_sdram=2
+
+# Default clocks for raspberries
+
+#         ARM   Core    GPU   RAM
+# Pi 1    700    250    250   400
+# Pi 2    900    250    250   400
+# Pi 3   1200    400    300   450
+# Pi 3B+ 1400    400    300   500  
+# Zero   1000    400    300   450
