@@ -25,6 +25,7 @@ used to install the selected alpine linux version.
 Tested version (whith the issue + fixed): alpine-rpi-3.14.0-armhf.tar
 
 To initialize X11 forwaring through ssh (openssh), the following files must be created/edited:
+note that the lines for the first two files are most likely to be commented, in this case just uncomment the lines...
 /etc/ssh/sshd_config:      X11Forwarding yes  AllowTcpForwarding yes
 /etc/ssh/ssh_config:       ForwardX11 yes
 /etc/X11/Xwrapper.config:  allowed_users=anybody
