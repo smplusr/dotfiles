@@ -22,7 +22,7 @@ A kernel error will occur if the device tries to boot after a fresh install.
 This is due to missing files contained in the boot directory (that should be in the primary partition).
 To fix this bootloader issue, it is recommended to directly extract and paste the boot folder from the armhf tar gz file
 used to install the selected alpine linux version.
-Tested version (whith the issue + fixed): alpine-rpi-3.14.0-armhf.tar
+Tested version (with the issue + fixed): alpine-rpi-3.14.0-armhf.tar
 
 To initialize X11 forwaring through ssh (openssh), the following files must be created/edited:
 note that the lines for the first two files are most likely to be commented, in this case just uncomment the lines...
