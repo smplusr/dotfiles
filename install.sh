@@ -86,6 +86,17 @@ else
 
 		echo snd-pcm-oss >> /etc/modules
 	fi
+
+	echo ""
+	echo "[INFO] - Install x11vnc and configs ?"
+	echo "[WARN] - Requires network connexion and reboot afterward !"
+	read -p "[INFO] - Answer: Y - N | " -n 1 -r
+	echo ""
+	if [[ $REPLY =~ ^[Yy]$ ]]
+	then	
+		cd utilities
+		./vnc_setup.sh
+	fi
 	
 	echo ""
 	echo "[INFO] - Installing config for user ?"
