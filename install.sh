@@ -50,6 +50,7 @@ else
 	then	
 		cd utilities
 		./package_setup.sh
+		cd ../
 	fi
 
 	echo ""
@@ -61,6 +62,7 @@ else
 	then
 		cd utilities
 		./broadcom_setup.sh
+		cd ../
 	fi
 
 	echo ""
@@ -97,6 +99,7 @@ else
 	then	
 		cd utilities
 		./vnc_setup.sh
+		cd ../
 	fi
 	
 	echo ""
@@ -107,5 +110,6 @@ else
 	then	
 		cd utilities
 		./config_setup.sh
+		cd ../
 	fi
 fi
