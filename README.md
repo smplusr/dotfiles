@@ -26,9 +26,11 @@ Tested version (with the issue + fixed): alpine-rpi-3.14.0-armhf.tar
 
 To initialize X11 forwaring through ssh (openssh), the following files must be created/edited:
 note that the lines for the first two files are most likely to be commented, in this case just uncomment the lines...
+```
 /etc/ssh/sshd_config:      X11Forwarding yes  AllowTcpForwarding yes
 /etc/ssh/ssh_config:       ForwardX11 yes
 /etc/X11/Xwrapper.config:  allowed_users=anybody
+```
 
 package/ folder not uploaded due to it's size. The "install packages offline" shall not be used.
 Vim plugin may not work at first, it is recommended to run :PlugInstall or :PlugUpdate once vim is launched for the first time.
