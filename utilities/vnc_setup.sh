@@ -5,6 +5,6 @@ rc-update add local default
 mv x11vnc/vnc.start /etc/local.d/
 chmod +x /etc/local.d/vnc.start
 
-cat "x11vnc" >> /home/user/.xinitrc
+echo "x11vnc" >> /home/user/.xinitrc
 
 cd ../
