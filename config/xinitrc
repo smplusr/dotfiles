@@ -1,4 +1,5 @@
 
-polybar main&
+polybar main &
 sxhkd &
-exec bspwm
+exec bspwm &
+x11vnc
