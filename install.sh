@@ -1,6 +1,7 @@
 chmod +x utilities/broadcom_setup.sh
 chmod +x utilities/package_setup.sh
 chmod +x utilities/config_setup.sh
+chmod +x utilities/ssh_setup.sh
 chmod +x utilities/vnc_setup.sh
 
 echo ""
