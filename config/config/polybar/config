@@ -318,7 +318,7 @@ label-empty-font = 3
 [module/temperature]
 	type = internal/temperature
 	thermal-zone = 0
-	warn-temperature = 60
+	warn-temperature = 1000
 
 	format = <ramp> <label>
 	format-warn = <ramp> <label-warn>
